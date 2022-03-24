@@ -1,0 +1,25 @@
+# Source other aliases
+
+if [ -f ~/.zsh/zsh_pentest ]; then
+    source ~/.zsh/zsh_pentest
+else
+    print "404: ~/.zsh/zsh_pentest not found."
+fi
+
+if [ -f ~/.zsh/zsh_nmap ]; then
+    source ~/.zsh/zsh_nmap
+else
+    print "404: ~/.zsh/zsh_nmap not found."
+fi
+
+if [ -f ~/.zsh/zsh_websearch ]; then
+    source ~/.zsh/zsh_websearch
+else
+    print "404: ~/.zsh/zsh_websearch not found."
+fi
+
+if [ -f ~/.zsh/zsh_myaliases ]; then
+    source ~/.zsh/zsh_myaliases
+else
+    print "404: ~/.zsh/zsh_myaliases not found."
+fi
