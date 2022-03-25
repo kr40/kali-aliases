@@ -19,6 +19,21 @@ alias un='sudo apt remove -y '
 alias c='clear'
 alias e='exit'
 
+# Alias for bat
+alias bat='batcat'
+
+# Alias for fdfind
+alias fd='fdfind -H'
+
+# Alias for fping
+psweep() {
+  sudo fping -A -d -a -q -g -s -i 1 -r 0 $1 $2
+}
+
+psweepg() {
+  sudo fping -A -a -q -g -i 1 -r 0 $1 $2
+}
+
 # Alias for autorecon
 alias autorecon='sudo autorecon'
 
@@ -74,12 +89,12 @@ alias root='cd /'
 alias rmd='/bin/rm  --recursive --force --verbose '
 
 # alias chmod commands
-alias mx='chmod a+x'
-alias 000='chmod -R 000'
-alias 644='chmod -R 644'
-alias 666='chmod -R 666'
-alias 755='chmod -R 755'
-alias 777='chmod -R 777'
+alias mx='sudo chmod a+x'
+alias 000='sudo chmod -R 000'
+alias 644='sudo chmod -R 644'
+alias 666='sudo chmod -R 666'
+alias 755='sudo chmod -R 755'
+alias 777='sudo chmod -R 777'
 
 #Echo current IPv4 Address
 alias myip="curl http://ipecho.net/plain; echo"
@@ -99,10 +114,10 @@ alias p="ps aux | grep "
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
 #VPNs
-#  alias htb='sudo openvpn ~/Desktop/ctf/vpn/htb-labs.ovpn'
-#  alias htbstart='sudo openvpn ~/Desktop/ctf/vpn/htb-startingpoint.ovpn'
-#  alias htbacademy='sudo openvpn ~/Desktop/ctf/vpn/htb-academy.ovpn'
-#  alias thm='sudo openvpn ~/Desktop/vpn/ctf/thm-labs.ovpn'
+alias htb='sudo openvpn ~/Desktop/ctf/vpn/htb-labs.ovpn'
+alias htbstart='sudo openvpn ~/Desktop/ctf/vpn/htb-startingpoint.ovpn'
+alias htbacademy='sudo openvpn ~/Desktop/ctf/vpn/htb-academy.ovpn'
+alias thm='sudo openvpn ~/Desktop/vpn/ctf/thm-labs.ovpn'
 
 # Search files in the current folder
 alias f="find . | grep "
@@ -167,7 +182,7 @@ alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' 
 alias sha1='openssl sha1'
 
 # FAST API (npm)
-# alias fast='fast -u'
+alias fast='fast -u'
 
 # Alias to add hosts
 alias hosts='sudo mousepad /etc/hosts'

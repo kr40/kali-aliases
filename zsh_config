@@ -1,5 +1,6 @@
 # Source other aliases
 
+# Source other plugins
 if [ -f ~/.zsh/zsh_pentest ]; then
     source ~/.zsh/zsh_pentest
 else
@@ -22,4 +23,28 @@ if [ -f ~/.zsh/zsh_myaliases ]; then
     source ~/.zsh/zsh_myaliases
 else
     print "404: ~/.zsh/zsh_myaliases not found."
+fi
+
+if [ -f ~/.zsh/zsh_git ]; then
+    source ~/.zsh/zsh_git
+else
+    print "404: ~/.zsh/zsh_git not found."
+fi
+
+if [ -f ~/.zsh/zsh_copyfunc ]; then
+    source ~/.zsh/zsh_copyfunc
+else
+    print "404: ~/.zsh/zsh_copyfunc not found."
+fi
+
+if [ -f ~/.zsh/zsh_jsontools ]; then
+    source ~/.zsh/zsh_jsontools
+else
+    print "404: ~/.zsh/zsh_jsontools not found."
+fi
+
+if [ -f ~/.zsh/zsh_dirhistory ]; then
+    source ~/.zsh/zsh_dirhistory
+else
+    print "404: ~/.zsh/zsh_dirhistory not found."
 fi

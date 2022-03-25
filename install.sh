@@ -57,6 +57,24 @@ if [[ $? == 0 ]]; then
   echo "command succeed"
 fi
 
+mv zsh_copyfunc ~/.zsh/
+
+if [[ $? == 0 ]]; then
+  echo "command succeed"
+fi
+
+mv zsh_dirhistory ~/.zsh/
+
+if [[ $? == 0 ]]; then
+  echo "command succeed"
+fi
+
+mv zsh_jsontools ~/.zsh/
+
+if [[ $? == 0 ]]; then
+  echo "command succeed"
+fi
+
 echo "Moved Successfully"
 
 echo "Adding commands to source the aliases to .zshrc"
