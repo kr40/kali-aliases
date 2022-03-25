@@ -2,6 +2,26 @@
 
 # web_search from terminal
 
+function open_command() {
+  local open_cmd
+
+  # define the open command
+  case "$OSTYPE" in
+    darwin*)  open_cmd='open' ;;
+    cygwin*)  open_cmd='cygstart' ;;
+    linux*)   [[ "$(uname -r)" != *icrosoft* ]] && open_cmd='nohup xdg-open' || {
+                open_cmd='cmd.exe /c start ""'
+                [[ -e "$1" ]] && { 1="$(wslpath -w "${1:a}")" || return 1 }
+              } ;;
+    msys*)    open_cmd='start ""' ;;
+    *)        echo "Platform $OSTYPE not supported"
+              return 1
+              ;;
+  esac
+
+  ${=open_cmd} "$@" &>/dev/null
+}
+
 function web_search() {
   emulate -L zsh
 
@@ -25,6 +45,7 @@ function web_search() {
     wolframalpha   "https://www.wolframalpha.com/input/?i="
     archive     "https://web.archive.org/web/*/"
     scholar        "https://scholar.google.com/scholar?q="
+    reddit      "https://www.reddit.com/search/?q="
   )
 
   # check whether the search engine is supported
@@ -64,6 +85,7 @@ alias stackoverflow='web_search stackoverflow'
 alias wolframalpha='web_search wolframalpha'
 alias archive='web_search archive'
 alias scholar='web_search scholar'
+alias reddit='web_search reddit'
 
 #add your own !bang searches here
 alias wiki='web_search duckduckgo \!w'
