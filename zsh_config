@@ -48,3 +48,9 @@ if [ -f ~/.zsh/zsh_dirhistory ]; then
 else
     print "404: ~/.zsh/zsh_dirhistory not found."
 fi
+
+if [ -f ~/.zsh/zsh_interactivecd ]; then
+    source ~/.zsh/zsh_interactivecd
+else
+    print "404: ~/.zsh/zsh_interactivecd not found."
+fi

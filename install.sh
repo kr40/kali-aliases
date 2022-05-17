@@ -75,6 +75,12 @@ if [[ $? == 0 ]]; then
   echo "command succeed"
 fi
 
+mv zsh_interactivecd ~/.zsh/
+
+if [[ $? == 0 ]]; then
+  echo "command succeed"
+fi
+
 echo "Moved Successfully"
 
 echo "Adding commands to source the aliases to .zshrc"

@@ -12,12 +12,21 @@ alias upd='sudo apt update'
 alias upg='sudo apt full-upgrade -y'
 alias distupg='sudo apt update && sudo apt full-upgrade && sudo apt dist-upgrade -y'
 alias autorm='sudo apt autoremove'
+alias autocl='sudo apt autoclean'
 alias ins='sudo apt install -y '
 alias un='sudo apt remove -y '
 
 # Alias's for clear & exit
 alias c='clear'
 alias e='exit'
+
+# Global Variables
+export FZF_DEFAULT_COMMAND='find .'
+export PATH=$PATH:/home/kr40/Desktop/scripts
+export BAT_THEME=Dracula
+
+# Alias for searchsploit
+alias ss='searchsploit'
 
 # Alias for bat
 alias bat='batcat'
@@ -27,11 +36,11 @@ alias fd='fdfind -H'
 
 # Alias for fping
 psweep() {
-  sudo fping -A -d -a -q -g -s -i 1 -r 0 $1 $2
+  sudo fping -A -d -a -q -g -s $3 -i 1 -r 0 $1 $2
 }
 
 psweepg() {
-  sudo fping -A -a -q -g -i 1 -r 0 $1 $2
+  sudo fping -A -a -q -g $3 -i 1 -r 0 $1 $2
 }
 
 # Alias for autorecon
