@@ -23,7 +23,7 @@ echo "Creating .zsh folder in ~ (Home Directory)"
 mkdir ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 echo "Moving aliases to .zsh folder"
@@ -31,54 +31,54 @@ echo "Moving aliases to .zsh folder"
 mv zsh_git ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 mv zsh_myaliases ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 mv zsh_nmap ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 mv zsh_pentest ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 mv zsh_websearch ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 mv zsh_copyfunc ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 mv zsh_dirhistory ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 mv zsh_jsontools ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 mv zsh_interactivecd ~/.zsh/
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 echo "Moved Successfully"
@@ -88,7 +88,7 @@ echo "Adding commands to source the aliases to .zshrc"
 cat zsh_config >>~/.zshrc
 
 if [[ $? == 0 ]]; then
-  echo "command succeed"
+  echo "command success"
 fi
 
 echo "Please install exa, rustscan and autorecon to use their aliases."
