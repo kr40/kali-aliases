@@ -1,7 +1,7 @@
     #!/usr/bin/env zsh
     
     # Alias's for exa
-    alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+    alias ls='exa -halF --color=always --group-directories-first' # my preferred listing
     alias la='exa -a --color=always --group-directories-first'  # all files and dirs
     alias ll='exa -l --color=always --group-directories-first'  # long format
     alias lt='exa -aT --color=always --group-directories-first' # tree listing
@@ -48,16 +48,13 @@
     				sudo fping -A -a -q -g $3 -i 1 -r 0 $1 $2 
     			 }
     
-    # Alias for autorecon
-    alias autorecon='sudo autorecon'
-    
     # Alias's for RustScan
     rsbasic () {
-    				sudo rustscan --ulimit 5000 -a $1 -- -sC -sV -A -T4 $2    				
+    				sudo rustscan --ulimit 5000 -a $1 -- -sC -sV -A -T4 $2 
     			}
     			
     rsoutput () {
-           	sudo rustscan --ulimit 5000 -a $1 -- -oA ~/Desktop/ctf/nmap/$2 -sC -sV -A -T4 $3 
+           	sudo rustscan --ulimit 5000 -a $1 -- -oA ~/Desktop/ctf/$2 -sC -sV -A -T4 $3 
           }			
           
     # Alias's for FeroxBuster
@@ -66,15 +63,20 @@
 						sudo feroxbuster -u http://$1 $2    
           }			    	
     fbusteroutput () {
-    				sudo feroxbuster -u http://$1 -o ~/Desktop/ctf/feroxbuster/$2 $3
+    				sudo feroxbuster -u http://$1 -o ~/Desktop/ctf/$2 $3
     			}
     			
    # Alias to convert xml to html
    
    x2h () {
             xsltproc $1.xml -o $1.html
-          }   
-    
+          }
+          
+   # Alias's for TMUX
+   alias t="tat"
+   alias ta="tmux a -t"
+   alias tls="tmux ls"
+          
    # Alias's to modified commands
    alias cp='cp -i'
    alias mv='mv -i'
@@ -154,7 +156,7 @@
    function busytext() { while true; do sleep .15; head /dev/urandom | tr -dc A-Za-z0-9; done; }
    
    # Print last value returned from previous command
-   lastvalue='RET=$?; if [[ $RET -eq 0 ]]; then echo -ne "\033[0;32m$RET\033[0m ;)"; else echo -ne "\033[0;31m$RET\033[0m ;("; fi; echo -n " "'
+   alias lastvalue='RET=$?; if [[ $RET -eq 0 ]]; then echo -ne "\033[0;32m$RET\033[0m ;)"; else echo -ne "\033[0;31m$RET\033[0m ;("; fi; echo -n " "'
    
    # Grab a pretty ascii forecast picture for anywhere; without arguments, uses ISP location to print your weather
    # Example: weather New York, NY
@@ -330,3 +332,4 @@ trim()
 	var="${var%"${var##*[![:space:]]}"}"  # remove trailing whitespace characters
 	echo -n "$var"
 }
+
