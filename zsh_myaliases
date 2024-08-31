@@ -19,11 +19,6 @@
     # Alias's for clear & exit
     alias c='clear'
     alias e='exit'
-
-    # Alias's for tmux
-    alias t='tmux'
-    alias ta='tmux attach -t'
-    alias tn='tmux new -s'
     
     # Global Variables
     export FZF_DEFAULT_COMMAND='find .' 
@@ -71,11 +66,6 @@
    x2h () {
             xsltproc $1.xml -o $1.html
           }
-          
-   # Alias's for TMUX
-   alias t="tat"
-   alias ta="tmux a -t"
-   alias tls="tmux ls"
           
    # Alias's to modified commands
    alias cp='cp -i'
